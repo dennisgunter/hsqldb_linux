@@ -1,1 +1,18 @@
 # hsqldb_linux
+
+0. Schritt: Vorbereitung
+Dieses Verzeichnis auspacken und ein Terminal oeffnen
+
+1. Schritt: runserver und runclient ausfuehrbar machen
+chmod +x runclient
+chmod +x runserver
+
+2. Schritt: runserver starten.
+./runserver
+
+3. Schritt: runclient starten.
+./runclient
+
+4. Schritt: Datenbank öffnen
+TYPE: HSQL Database Engine Server
+URL:  jdbc:hsqldb:hsql//localhost/test
