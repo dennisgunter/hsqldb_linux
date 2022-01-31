@@ -1,0 +1,23 @@
+# Datenbanknamen eingeben
+printf  "###############################################\n"
+printf  "# Starten des HSQLDB-Servers                  #\n"
+printf  "###############################################\n"
+read -p 'Datenbanknamen eingeben:' DATABASE
+if [ -n "$DATABASE" ]
+then
+echo $DATABASE wird ggf. angelegt
+else
+DATABASE="test"
+fi
+
+# Verwendung des Clients ausgeben
+printf  "###############################################\n"
+printf  "# Starten den HSQLDB-Client mit:\n"
+printf  "#     TYPE: HSQL Database Engine Server\n"
+printf  "#     URL:  jdbc:hsqldb:hsql//localhost/$DATABASE\n"
+printf  "###############################################\n"
+
+# Server starten
+java -cp ./hsqldb-2.4.1.jar org.hsqldb.server.Server --database.0 file:./data/$DATABASE/$DATABASE --dbname.0 $DATABASE
+echo -- Server beenden -------------------------
+sleep 2000
